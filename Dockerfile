@@ -1,9 +1,19 @@
 FROM heroku/cedar:14
 MAINTAINER Joseph Ortiz <josepho011235@gmail.com>
 
-
+RUN echo "getting the sdk"
 RUN wget https://github.com/emojicode/emojicode/releases/download/v0.2-beta.2/Emojicode-0.2.0-beta.2-x86_64-linux-gnu.tar.gz
+
+RUN echo "unzipping the tar"
 RUN tar -xzf Emojicode-VERSION-YOUR-PLATFORM.tar.gz
 RUN cd Emojicode-0.2.0-beta.2-x86_64-linux-gnu.tar.gz
+RUN echo "executing install script"
 RUN ./install.sh
+
+RUN echo "installing emojis :)"
 RUN apt-get install ttf-ancient-fonts
+
+RUN echo "compiling hello world"
+RUN emojicodec hello.emojic
+
+RUN emojicode hello.emojib
