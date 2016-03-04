@@ -6,7 +6,8 @@ RUN wget https://github.com/emojicode/emojicode/releases/download/v0.2-beta.2/Em
 
 RUN echo "unzipping the tar"
 RUN tar -xzf Emojicode-0.2.0-beta.2-x86_64-linux-gnu.tar.gz
-RUN cd Emojicode-0.2.0-beta.2-x86_64-linux-gnu.tar.gz
+RUN ls && cd Emojicode-0.2.0-beta.2-x86_64-linux-gnu
+
 RUN echo "executing install script"
 RUN ./install.sh
 
